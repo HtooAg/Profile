@@ -9,11 +9,11 @@ import {
 } from "@mui/material";
 import { WORK_EXPERIENCE_CONTENT } from "../constants";
 import { purple } from "@mui/material/colors";
-import {motion} from "motion/react";
+import { motion } from "motion/react";
 
 export default function Experience() {
 	return (
-		<Box sx={{ padding: 2 }}>
+		<Box id="experience" sx={{ padding: 2 }}>
 			<motion.div
 				whileInView={{ opacity: 1, x: 0 }}
 				initial={{ opacity: 0, y: -10 }}
@@ -21,7 +21,7 @@ export default function Experience() {
 			>
 				<Typography
 					variant="h4"
-					sx={{ textAlign: "center", paddingTop: 5 }}
+					sx={{ textAlign: "center", paddingTop: 10 }}
 				>
 					Experience
 				</Typography>
@@ -36,7 +36,7 @@ export default function Experience() {
 					sx={{
 						paddingTop: 5,
 						margin: "auto",
-						width: { lg: "60%", md: "80%", xs: "100%" },
+						width: { lg: "60%", md: "80%", xs: "90%" },
 					}}
 				>
 					{WORK_EXPERIENCE_CONTENT.map((experience, index) => (
@@ -61,14 +61,17 @@ export default function Experience() {
 											sx={{
 												display: "flex",
 												justifyContent: "space-between",
-												alignItems: "center",
+												flexDirection: {
+													xs: "column",
+													lg: "row",
+													md: "row",
+												},
 											}}
 										>
 											<Typography
 												component="h6"
 												variant="body3"
 												sx={{
-													textAlign: "center",
 													fontWeight: "bold",
 												}}
 											>
@@ -93,6 +96,7 @@ export default function Experience() {
 												sx={{
 													fontWeight: "bold",
 													color: "gray",
+													paddingTop: { xs: 1 },
 												}}
 											>
 												{experience.company}
@@ -144,7 +148,6 @@ export default function Experience() {
 																textTransform:
 																	"none",
 																cursor: "pointer",
-
 																boxShadow:
 																	"none",
 																"&:hover": {

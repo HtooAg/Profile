@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 export default function About() {
 	return (
 		<Box
+			id="about"
 			sx={{
 				display: "flex",
 				flexDirection: { xs: "column", lg: "row" },
@@ -16,7 +17,7 @@ export default function About() {
 		>
 			<Box
 				sx={{
-					paddingTop: 5,
+					paddingTop: 10,
 					textAlign: { xs: "center", md: "center" },
 				}}
 			>
@@ -59,36 +60,44 @@ export default function About() {
 					initial={{ opacity: 0, y: -10 }}
 					transition={{ duration: 1 }}
 				>
-					{" "}
 					<Box
 						sx={{
 							display: "flex",
 							flexDirection: { xs: "column", lg: "row" },
 							paddingTop: 7,
-						}}
-					>
-						<Box
-							sx={{
-								marginTop: { md: 0 },
-								marginRight: { xs: 0, md: 5 },
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-								width: { xs: "100%", lg: "auto" },
+							justifyContent: "center",
 							}}
+					>
+						<motion.div
+							initial={{ scale: 0 }}
+							animate={{ scale: 1 }}
+							whileHover={{ scale: 1.03 }}
+							whileTap={{ scale: 0.9 }}
 						>
-							<img
-								src={ProfilePic}
-								alt="Profile"
-								style={{
-									borderRadius: "10%",
-									width: "100%",
-									maxWidth: "400px",
-									height: "auto",
-									objectFit: "cover",
-								}}
-							/>
-						</Box>
+							<Box
+								sx={{
+									marginTop: { md: 0 },
+									marginRight: { xs: 0, md: 5 },
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									width: { xs: "100%", lg: "auto" },
+									cursor: "pointer",
+									}}
+							>
+								<img
+									src={ProfilePic}
+									alt="Profile"
+									style={{
+										borderRadius: "10%",
+										width: "100%",
+										maxWidth: "400px",
+										height: "auto",
+										objectFit: "cover",
+									}}
+								/>
+							</Box>
+						</motion.div>
 
 						<Box
 							sx={{
@@ -98,7 +107,7 @@ export default function About() {
 									xs: "center",
 									md: "center",
 								},
-								paddingTop: { xs: 5 },
+								paddingTop: {lg: 0,md: 5, xs: 5 },
 								alignItems: { xs: "center", md: "flex-start" },
 								width: { xs: "100%", md: "600px" },
 							}}
@@ -111,13 +120,12 @@ export default function About() {
 								<Typography
 									component="h6"
 									sx={{
-										padding: { xs: 5 },
+										padding: {lg: 0, xs: 5 },
 										paddingBottom: { xs: 0 },
 										paddingTop: { xs: 2 },
 										fontSize: {
 											xs: "14px",
 											sm: "16px",
-											md: "18px",
 										},
 										lineHeight: {
 											xs: "1.4",

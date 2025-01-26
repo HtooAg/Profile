@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 export default function Header() {
 	return (
-		<Box
+		<Box id="home"
 			sx={{
 				display: "flex",
 				flexDirection: { xs: "column", lg: "row" },
@@ -13,9 +13,8 @@ export default function Header() {
 				alignItems: "center",
 				padding: 2,
 				flexWrap: "wrap",
-				width: { xl:"95%"},
+				width: { xl: "95%" },
 				margin: "auto",
-              
 			}}
 		>
 			<Box
@@ -34,8 +33,13 @@ export default function Header() {
 					<Typography
 						component="h1"
 						sx={{
-							fontSize: { lg: 50, xs: 40 }, // Adjust font size for small screens
+							fontSize: { lg: 50, xs: 40 },
 							marginLeft: { lg: 2.5, xs: 0, md: 5 },
+							textAlign: {
+								xs: "center",
+								md: "center",
+								xl: "left",
+							},
 						}}
 					>
 						Htoo Aung Wai
@@ -47,7 +51,7 @@ export default function Header() {
 						paddingTop: 5,
 						flexDirection: { xs: "column", md: "row" },
 						alignItems: { xs: "center", md: "flex-start" },
-						width: "100%", // Ensures proper wrapping
+						width: "100%",
 					}}
 				>
 					<motion.div
@@ -86,7 +90,7 @@ export default function Header() {
 									md: "center",
 								},
 								paddingTop: 5,
-								width: { xs: "100%", md: 500 }, // Makes text take full width on small screens
+								width: { xs: "100%", md: 500 },
 								paddingBottom: { xs: 0 },
 							}}
 						>
@@ -108,7 +112,6 @@ export default function Header() {
 				<motion.button
 					initial={{ scale: 0 }}
 					animate={{ scale: 1 }}
-					transition={{ duration: 0.3 }}
 					whileHover={{ scale: 1.03 }}
 					whileTap={{ scale: 0.9 }}
 				>
@@ -117,8 +120,7 @@ export default function Header() {
 						alt="Profile"
 						style={{
 							borderRadius: "10%",
-							width: "100%",
-							width: "400px", // Ensures the profile image doesn't overflow
+							width: "400px",
 							height: "auto",
 							objectFit: "cover",
 						}}

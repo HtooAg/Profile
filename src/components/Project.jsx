@@ -15,7 +15,7 @@ import { motion } from "motion/react";
 
 export default function Project() {
 	return (
-		<Box sx={{ padding: 2 }}>
+		<Box id="project" sx={{ padding: 2, paddingTop: 10 }}>
 			<motion.div
 				whileInView={{ opacity: 1, x: 0 }}
 				initial={{ opacity: 0, y: -5 }}
@@ -25,7 +25,6 @@ export default function Project() {
 					variant="h4"
 					sx={{
 						textAlign: "center",
-						paddingTop: 2,
 					}}
 				>
 					Projects
@@ -33,14 +32,14 @@ export default function Project() {
 			</motion.div>
 			<motion.div
 				whileInView={{ opacity: 1, y: 0 }}
-				initial={{ opacity: 0,y: -100 }}
+				initial={{ opacity: 0, y: -100 }}
 				transition={{ duration: 1 }}
 			>
 				<Grid
 					container
 					spacing={2}
 					sx={{
-						paddingTop: 5,
+						paddingTop: 2,
 						alignItems: "center",
 						justifyContent: "center",
 						width: { lg: "100%", md: "80%", xs: "100%" },
@@ -83,7 +82,7 @@ export default function Project() {
 												"0 4px 8px rgba(0, 0, 0, 0.1)",
 										}}
 									/>
-									<CardContent sx={{ padding: 1 }}>
+									<CardContent sx={{ padding: 1, paddingTop: 3 }}>
 										<Typography
 											variant="h6"
 											sx={{ fontWeight: "bold" }}
@@ -92,7 +91,10 @@ export default function Project() {
 										</Typography>
 										<Typography
 											variant="body2"
-											sx={{ marginTop: 1 }}
+											sx={{
+												marginTop: 1,
+												lineHeight: 1.8,
+											}}
 										>
 											{project.description}
 										</Typography>
@@ -118,6 +120,7 @@ export default function Project() {
 															padding: "8px 16px",
 															border: "1px solid #64748b",
 															margin: 0.5,
+
 															fontSize:
 																"0.875rem",
 															background:

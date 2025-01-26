@@ -1,23 +1,24 @@
-import React, { useState, useMemo } from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import Navbar from "./components/Navbar";
+import React from "react";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import About from "./components/About";
-import Footer from "./components/Footer";
 import Tech from "./components/Tech";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Project from "./components/Project";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useState, useMemo } from "react";
+import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
+import Navbar from "./components/Navbar";
+import { grey } from "@mui/material/colors";
+
 export default function App() {
 	const [mode, setMode] = useState("dark");
-
 	const theme = useMemo(
 		() =>
 			createTheme({
 				palette: {
 					mode,
+					banner: mode === "dark" ? grey[800] : grey[200]
 				},
 			}),
 		[mode]
@@ -26,7 +27,6 @@ export default function App() {
 	const toggleTheme = () => {
 		setMode((prevMode) => (prevMode === "dark" ? "light" : "dark"));
 	};
-
 	return (
 		<ThemeProvider theme={theme}>
 			<CssBaseline />

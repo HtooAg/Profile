@@ -28,7 +28,7 @@ const iconVar = (duration) => ({
 
 export default function Tech() {
 	return (
-		<Box
+		<Box id="tech"
 			sx={{
 				flexDirection: { xs: "column", md: "row" },
 				justifyContent: "center",
@@ -43,7 +43,7 @@ export default function Tech() {
 			>
 				<Typography
 					variant="h4"
-					sx={{ textAlign: "center", paddingTop: 5 }}
+					sx={{ textAlign: "center", paddingTop: 10	 }}
 				>
 					Technologies
 				</Typography>

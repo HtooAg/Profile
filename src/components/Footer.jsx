@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider, Typography, IconButton } from "@mui/material";
+import { Box, Divider, Typography, IconButton, Button } from "@mui/material";
 import {
 	Phone as PhoneIcon,
 	Email as EmailIcon,
@@ -9,9 +9,10 @@ import {
 	Facebook as FacebookIcon,
 } from "@mui/icons-material";
 
+import { Link } from "react-router-dom";
 export default function Footer() {
 	return (
-		<Box sx={{ padding: 3, width: "90%", margin: "auto" }}>
+		<Box id="footer" sx={{ padding: 3, width: "90%", margin: "auto" }}>
 			{/* Main Content Section */}
 			<Divider />
 			<Box
@@ -50,7 +51,7 @@ export default function Footer() {
 						width: { xs: "100%", md: "auto" },
 					}}
 				/>
-				{/* Quick Links Section */}
+			
 				{/* Get In Touch Section */}
 				<Box sx={{ flex: "1/4", maxWidth: { xs: "100%", md: "30%" } }}>
 					<Typography variant="h6" sx={{ marginBottom: 2 }}>
@@ -129,13 +130,22 @@ export default function Footer() {
 							gap: 1,
 						}}
 					>
-						<IconButton color="inherit" href="https://www.linkedin.com/in/htoo-aung-123405275">
+						<IconButton
+							color="inherit"
+							href="https://www.linkedin.com/in/htoo-aung-123405275"
+						>
 							<LinkedInIcon />
 						</IconButton>
-						<IconButton color="inherit" href="https://github.com/HtooAg">
+						<IconButton
+							color="inherit"
+							href="https://github.com/HtooAg"
+						>
 							<GitHubIcon />
 						</IconButton>
-						<IconButton color="inherit" href="https://www.facebook.com/profile.php?id=100091996466753">
+						<IconButton
+							color="inherit"
+							href="https://www.facebook.com/profile.php?id=100091996466753"
+						>
 							<FacebookIcon />
 						</IconButton>
 					</Box>
